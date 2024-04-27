@@ -201,57 +201,65 @@ export default function Navbar({
 
                 {/* 언어 선택 */}
                 <div className="flex flex-col">
-                  <Link
-                    href="/"
-                    className="rounded-lg p-2 text-lg md:text-base"
-                    onClick={() => {
-                      setIsMenuOpen(false)
-                      setShowUser(false)
-                    }}
-                    locale="ko"
-                    data-lang="ko"
-                  >
-                    한국어
-                  </Link>
+                  {locale !== "ko" && (
+                    <Link
+                      href="/"
+                      className="rounded-lg p-2 text-lg md:text-base"
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        setShowUser(false)
+                      }}
+                      locale="ko"
+                      data-lang="ko"
+                    >
+                      한국어
+                    </Link>
+                  )}
 
-                  <Link
-                    href="/"
-                    className="rounded-lg p-2 text-lg md:text-base"
-                    onClick={() => {
-                      setIsMenuOpen(false)
-                      setShowUser(false)
-                    }}
-                    locale="en"
-                    data-lang="en"
-                  >
-                    English
-                  </Link>
+                  {locale !== "en" && (
+                    <Link
+                      href="/"
+                      className="rounded-lg p-2 text-lg md:text-base"
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        setShowUser(false)
+                      }}
+                      locale="en"
+                      data-lang="en"
+                    >
+                      English
+                    </Link>
+                  )}
 
-                  <Link
-                    href="/"
-                    className="rounded-lg p-2 text-lg md:text-base"
-                    onClick={() => {
-                      setIsMenuOpen(false)
-                      setShowUser(false)
-                    }}
-                    locale="ja"
-                    data-lang="ja"
-                  >
-                    日本語
-                  </Link>
+                  {locale !== "ja" && (
+                    <Link
+                      href="/"
+                      className="rounded-lg p-2 text-lg md:text-base"
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        setShowUser(false)
+                      }}
+                      locale="ja"
+                      data-lang="ja"
+                    >
+                      日本語
+                    </Link>
+                  )}
 
-                  <Link
-                    href="/"
-                    className="rounded-lg p-2 text-lg md:text-base"
-                    onClick={() => {
-                      setIsMenuOpen(false)
-                      setShowUser(false)
-                    }}
-                    locale="vi"
-                    data-lang="vi"
-                  >
-                    Tiếng Việt
-                  </Link>
+                  {locale !== "vi" && (
+                    <Link
+                      href="/"
+                      className="rounded-lg p-2 text-lg md:text-base"
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        setShowUser(false)
+                      }}
+                      locale="vi"
+                      data-lang="vi"
+                    >
+                      Tiếng Việt
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -453,57 +461,65 @@ export default function Navbar({
 
                           {/* 언어 선택 */}
                           <div className="flex flex-col">
-                            <Link
-                              href="/"
-                              className="rounded-lg p-2 text-lg md:text-base"
-                              onClick={() => {
-                                setIsMenuOpen(false)
-                                setShowUser(false)
-                              }}
-                              locale="ko"
-                              data-lang="ko"
-                            >
-                              한국어
-                            </Link>
+                            {locale !== "ko" && (
+                              <Link
+                                href="/"
+                                className="rounded-lg p-2 text-lg md:text-base"
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  setShowUser(false)
+                                }}
+                                locale="ko"
+                                data-lang="ko"
+                              >
+                                한국어
+                              </Link>
+                            )}
 
-                            <Link
-                              href="/"
-                              className="rounded-lg p-2 text-lg md:text-base"
-                              onClick={() => {
-                                setIsMenuOpen(false)
-                                setShowUser(false)
-                              }}
-                              locale="en"
-                              data-lang="en"
-                            >
-                              English
-                            </Link>
+                            {locale !== "en" && (
+                              <Link
+                                href="/"
+                                className="rounded-lg p-2 text-lg md:text-base"
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  setShowUser(false)
+                                }}
+                                locale="en"
+                                data-lang="en"
+                              >
+                                English
+                              </Link>
+                            )}
 
-                            <Link
-                              href="/"
-                              className="rounded-lg p-2 text-lg md:text-base"
-                              onClick={() => {
-                                setIsMenuOpen(false)
-                                setShowUser(false)
-                              }}
-                              locale="ja"
-                              data-lang="ja"
-                            >
-                              日本語
-                            </Link>
+                            {locale !== "ja" && (
+                              <Link
+                                href="/"
+                                className="rounded-lg p-2 text-lg md:text-base"
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  setShowUser(false)
+                                }}
+                                locale="ja"
+                                data-lang="ja"
+                              >
+                                日本語
+                              </Link>
+                            )}
 
-                            <Link
-                              href="/"
-                              className="rounded-lg p-2 text-lg md:text-base"
-                              onClick={() => {
-                                setIsMenuOpen(false)
-                                setShowUser(false)
-                              }}
-                              locale="vi"
-                              data-lang="vi"
-                            >
-                              Tiếng Việt
-                            </Link>
+                            {locale !== "vi" && (
+                              <Link
+                                href="/"
+                                className="rounded-lg p-2 text-lg md:text-base"
+                                onClick={() => {
+                                  setIsMenuOpen(false)
+                                  setShowUser(false)
+                                }}
+                                locale="vi"
+                                data-lang="vi"
+                              >
+                                Tiếng Việt
+                              </Link>
+                            )}
                           </div>
                         </div>
                       </div>

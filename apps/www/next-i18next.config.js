@@ -9,7 +9,6 @@ module.exports = {
     defaultLocale: "default",
     localeDetection: false,
   },
-  debug: true,
   defaultNS: "main",
   localePath: path.resolve("./public/locales"),
 }

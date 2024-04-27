@@ -8,12 +8,15 @@ import Head from "next/head"
 import Image from "next/image"
 
 export const getServerSideProps = (async ctx => {
+  const koreanbots = await (
+    await fetch("https://api.nguard.xyz/www/status")
+  ).json()
+
   return {
     props: {
       data: {
-        dday: 0,
-        servers: null,
-        votes: null,
+        servers: koreanbots.data.servers,
+        votes: koreanbots.data.votes,
       },
       ...(await serverSideTranslations(ctx.locale ?? "ko", [
         "navbar",
@@ -89,7 +92,12 @@ export default function Home({
                 {t("section2.dday")}
               </span>
               <h4 className="font-suite w-28 min-w-0 shrink-0 rounded-2xl bg-[#1b212d] py-3.5 text-center text-2xl font-black sm:w-40 sm:text-4xl">
-                D+{data.dday}
+                D+
+                {Math.floor(
+                  (Number(new Date()) -
+                    Number(new Date(2022, 4, 12).getTime())) /
+                    (1000 * 60 * 60 * 24),
+                )}
               </h4>
             </div>
             <div className="flex items-center">
