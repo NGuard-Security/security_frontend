@@ -1,0 +1,36 @@
+{
+  "name": "nguard_security_frontend",
+  "version": "3.0.0",
+  "scripts": {
+    "www": "pnpm --filter @apps/www",
+    "locales": "pnpm --filter @packages/locales"
+  },
+  "dependencies": {
+    "i18next": "^23.11.2",
+    "next": "14.2.3",
+    "next-i18next": "^15.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.15.1",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  }
+}

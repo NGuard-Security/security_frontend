@@ -1,0 +1,7 @@
+{
+  "name": "@packages/ui",
+  "private": "true",
+  "dependencies": {
+    "@packages/tailwindcss-config": "workspace:^"
+  }
+}

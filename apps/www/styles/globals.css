@@ -1,0 +1,55 @@
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css");
+@import url("https://cdn.jsdelivr.net/gh/sunn-us/SUITE@2.0.3/fonts/variable/woff2/SUITE-Variable.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth bg-[#0f1016] text-white;
+}
+
+html[lang="ko"],
+html[lang="en"],
+[data-lang="ko"],
+[data-lang="en"] {
+  /* Korean / English Fonts */
+  font-family: "Wanted Sans Variable", sans-serif;
+  font-feature-settings: "ss05";
+}
+
+html[lang="vi"],
+[data-lang="vi"] {
+  /* Vietnamese (Latin) Fonts */
+  font-family: "Be Vietnam Pro", "Wanted Sans Variable", sans-serif;
+}
+
+html[lang="ja"],
+[data-lang="ja"] {
+  /* Japanese Fonts */
+  font-family: "Pretendard JP Variable", "Wanted Sans Variable",
+    sans-serif;
+}
+
+.font-suite {
+  /* Custom: SUITE Font */
+  font-family: "SUITE Variable", "Wanted Sans Variable", sans-serif !important;
+}
+
+/* Custom: 메인페이지 소개글 그라데이션 */
+#section3 h3 {
+  background-image: linear-gradient(210deg, #5587ed, #8041d9);
+}
+
+#section4 h3 {
+  background-image: linear-gradient(210deg, #e0844f, #f15f5f);
+}
+
+#section3 h3,
+#section4 h3 {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

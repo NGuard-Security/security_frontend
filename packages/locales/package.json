@@ -1,0 +1,15 @@
+{
+  "name": "@packages/locales",
+  "private": "true",
+  "scripts": {
+    "build": "tsup build.ts --minify --out-dir dist && node dist/build.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "public-google-sheets-parser": "^1.5.4",
+    "tsup": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0"
+  }
+}

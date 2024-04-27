@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true
+  },
+  "extends": ["./apps/www/tsconfig.json"],
+  "include": [
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+    "packages/tailwindcss-config/tailwind.config.ts"
+  ]
+}

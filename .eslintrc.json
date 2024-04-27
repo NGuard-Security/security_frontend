@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true
+  },
+  "ignorePatterns": ["node_modules/"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "rules": {
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "tailwindcss/classnames-order": [
+      "warn",
+      {
+        "officialSorting": true
+      }
+    ]
+  }
+}
