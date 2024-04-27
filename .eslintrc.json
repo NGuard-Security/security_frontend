@@ -18,6 +18,7 @@
     "plugin:tailwindcss/recommended"
   ],
   "rules": {
+    "no-nested-ternary": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "tailwindcss/classnames-order": [

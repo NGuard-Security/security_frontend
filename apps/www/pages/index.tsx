@@ -7,18 +7,38 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Head from "next/head"
 import Image from "next/image"
 
+export const getServerSideProps = (async ctx => {
+  return {
+    props: {
+      data: {
+        dday: 0,
+        servers: null,
+        votes: null,
+      },
+      ...(await serverSideTranslations(ctx.locale ?? "ko", [
+        "navbar",
+        "footer",
+        "main",
+      ])),
+    },
+  }
+}) satisfies GetServerSideProps
+
 export default function Home({
   data,
 }: {
   data: { dday: number; servers?: number; votes?: number }
 }) {
-  const { locale } = useRouter()
+  const { locale, asPath } = useRouter()
   const { t } = useTranslation("main")
 
   return (
     <>
       <Head>
         <title>Main : NGuard Security</title>
+        <meta property="og:title" content="Main : NGuard Security" />
+
+        <link rel="canonical" href={`https://nguard.xyz${asPath}`} />
       </Head>
 
       <main>
@@ -153,21 +173,4 @@ export default function Home({
       </main>
     </>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  return {
-    props: {
-      data: {
-        dday: 0,
-        servers: null,
-        votes: null,
-      },
-      ...(await serverSideTranslations(ctx.locale ?? "ko", [
-        "navbar",
-        "footer",
-        "main",
-      ])),
-    },
-  }
 }

@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth bg-[#0f1016] text-white;
+  @apply scroll-smooth select-none bg-[#0f1016] text-white;
 }
 
 html[lang="ko"],
