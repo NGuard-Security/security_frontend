@@ -8,7 +8,8 @@ export async function middleware(req: NextRequest) {
 
   if (
     pathname.startsWith("/_next") ||
-    pathname.includes("/api/") ||
+    pathname.includes("/api") ||
+    pathname.includes("/dashboard") ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next()

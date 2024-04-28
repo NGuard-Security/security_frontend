@@ -428,28 +428,28 @@ export default function Navbar({
                   {isUserMenuOpen && (
                     <div className="absolute left-8 z-40 mt-5 flex w-40 cursor-pointer flex-col rounded-lg bg-[#191919] p-1.5 backdrop-blur-sm">
                       {/*
-                          {domain === "checkout" ? (
-                            <Link
-                              href="/mypage"
-                              className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
-                              onClick={() => {
-                                setIsMobileNavOpen(false)
-                                setIsUserMenuOpen(false)
-                              }}
-                            >
-                              {t("payhistory")}
-                            </Link>
-                          ) : (
-                            <a
-                              href={`https://checkout-v2test.nguard.dev/${locale}/mypage`}
-                              className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
-                            >
-                              {t("payhistory")}
-                            </a>
-                          )}
+                        {domain === "checkout" ? (
+                          <Link
+                            href="/mypage"
+                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            onClick={() => {
+                              setIsMobileNavOpen(false)
+                              setIsUserMenuOpen(false)
+                            }}
+                          >
+                            {t("payhistory")}
+                          </Link>
+                        ) : (
+                          <a
+                            href={`https://checkout-v2test.nguard.dev/${locale}/mypage`}
+                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                          >
+                            {t("payhistory")}
+                          </a>
+                        )}
 
-                          <hr className="mx-2.5 my-2 border-zinc-800" />
-                        */}
+                        <hr className="mx-2.5 my-2 border-zinc-800" />
+                      */}
 
                       {/* 언어 선택 */}
                       <div className="flex flex-col">

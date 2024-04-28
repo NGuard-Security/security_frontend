@@ -2,8 +2,10 @@ import "@/styles/globals.css"
 
 import type { AppProps } from "next/app"
 import { appWithTranslation } from "next-i18next"
+import { GoogleTagManager } from "@next/third-parties/google"
 
 import Head from "next/head"
+import Script from "next/script"
 
 import Navbar from "@packages/ui/components/Navbar"
 import Footer from "@packages/ui/components/Footer"
@@ -54,6 +56,17 @@ function App({ Component, pageProps }: AppProps) {
 
       <Footer />
       <ChannelIO />
+      <GoogleTagManager gtmId="GTM-KKQTHLK" />
+
+      <Script id="clarity" strategy="afterInteractive">
+        {`
+          (function (c, l, a, r, i, t, y) {
+              c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+              t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+              y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+          })(window, document, "clarity", "script", "kdwq1fta0g");
+        `}
+      </Script>
     </>
   )
 }
