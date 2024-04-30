@@ -7,8 +7,6 @@ import { GoogleTagManager } from "@next/third-parties/google"
 import Head from "next/head"
 import Script from "next/script"
 
-import Navbar from "@packages/ui/components/Navbar"
-import Footer from "@packages/ui/components/Footer"
 import ChannelIO from "@packages/channelio/component"
 
 function App({ Component, pageProps }: AppProps) {
@@ -49,12 +47,10 @@ function App({ Component, pageProps }: AppProps) {
           href="https://cdn.nguard.dev/assets/common/images/favicon.png"
         />
       </Head>
-      <Navbar domain="www" />
 
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
 
-      <Footer />
       <ChannelIO />
       <GoogleTagManager gtmId="GTM-KKQTHLK" />
 

@@ -4,8 +4,13 @@ import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
+import { HomeProps } from "@/types/props/home"
+
 import Head from "next/head"
 import Image from "next/image"
+
+import Navbar from "@packages/ui/components/Navbar"
+import Footer from "@packages/ui/components/Footer"
 
 export const getServerSideProps = (async ctx => {
   const koreanbots = await (
@@ -27,11 +32,7 @@ export const getServerSideProps = (async ctx => {
   }
 }) satisfies GetServerSideProps
 
-export default function Home({
-  data,
-}: {
-  data: { dday: number; servers?: number; votes?: number }
-}) {
+export default function Home({ data }: HomeProps) {
   const { locale, asPath } = useRouter()
   const { t } = useTranslation("main")
 
@@ -43,6 +44,8 @@ export default function Home({
 
         <link rel="canonical" href={`https://nguard.xyz${asPath}`} />
       </Head>
+
+      <Navbar domain="www" />
 
       <main>
         <section
@@ -179,6 +182,8 @@ export default function Home({
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   )
 }

@@ -9,6 +9,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.nguard.dev",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+      },
     ],
   },
   reactStrictMode: true,

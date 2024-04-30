@@ -4,6 +4,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import Head from "next/head"
 import Link from "next/link"
 
+import Navbar from "@packages/ui/components/Navbar"
+import Footer from "@packages/ui/components/Footer"
+
 export const getServerSideProps = (async ctx => {
   const statusCode = ctx.res ? ctx.res.statusCode : null
 
@@ -29,6 +32,8 @@ export default function Error({
         <title>Error : NGuard Security</title>
         <meta property="og:title" content="Error : NGuard Security" />
       </Head>
+
+      <Navbar domain="www" />
 
       <main className="relative flex h-screen flex-col items-center justify-center gap-3 break-keep px-4 text-center">
         {statusCode === 400 ? (
@@ -103,6 +108,8 @@ export default function Error({
           </svg>
         </Link>
       </main>
+
+      <Footer />
     </>
   )
 }
