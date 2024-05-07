@@ -12,6 +12,19 @@ const targetLanguages = ["ko", "en", "ja", "vi"]
 const dictionaryDist = `${__dirname}/../dictionary`
 const i18nDist = [`${__dirname}/../../../apps/www/public/locales`]
 
+// 메인 => https://docs.google.com/spreadsheets/d/1xMVuKJdOsitsqv6re6wyblnoX_w22vT5y_Gc56cvEvA/edit?usp=sharing
+// 초대 => https://docs.google.com/spreadsheets/d/1qOT4QHqS5zYr5iZ-bSTzKB2QwWngDKPorQkOFBTMmz0/edit?usp=sharing
+const targetPages = [
+  {
+    domain: "main",
+    sheetId: "1xMVuKJdOsitsqv6re6wyblnoX_w22vT5y_Gc56cvEvA",
+  },
+  {
+    domain: "invite",
+    sheetId: "1qOT4QHqS5zYr5iZ-bSTzKB2QwWngDKPorQkOFBTMmz0",
+  }
+]
+
 console.clear()
 
 targetLanguages.forEach(lang => {
@@ -22,44 +35,59 @@ i18nDist.forEach(dist => {
   fs.mkdirSync(dist, { recursive: true })
 })
 
-// https://docs.google.com/spreadsheets/d/1xMVuKJdOsitsqv6re6wyblnoX_w22vT5y_Gc56cvEvA/edit?usp=sharing
-parser
-  .parse("1xMVuKJdOsitsqv6re6wyblnoX_w22vT5y_Gc56cvEvA", "dictionary")
-  .then(rows => {
-    const dictionary: {
-      [key: string]: {
-        [key: string]: string
-      }
-    } = {}
+targetPages.forEach(({ domain, sheetId }) => {
+  parser
+    .parse(sheetId, "dictionary")
+    .then(rows => {
+      const dictionary: {
+        [key: string]: {
+          [key: string]: string
+        }
+      } = {}
 
-    rows.forEach(row => {
+      rows.forEach(row => {
+        targetLanguages.forEach(lang => {
+          lodash.set(dictionary, `${lang}.${row.key}`, row[lang])
+        })
+      })
+
       targetLanguages.forEach(lang => {
-        lodash.set(dictionary, `${lang}.${row.key}`, row[lang])
+        if (domain === "main") {
+          Object.keys(dictionary[lang]).forEach(key => {
+            const langFile = path.join(
+              dictionaryDist,
+              lang,
+              `${key}.json`,
+            )
+
+            fs.writeFileSync(
+              langFile,
+              JSON.stringify(dictionary[lang][key]),
+            )
+          })
+        } else {
+          const langFile = path.join(
+            dictionaryDist,
+            lang,
+            `${domain}.json`,
+          )
+
+          fs.writeFileSync(
+            langFile,
+            JSON.stringify(dictionary[lang]),
+          )
+        }
+
+        console.log(`Created ${domain}/${lang} dictionary file.`)
       })
-    })
 
-    targetLanguages.forEach(lang => {
-      Object.keys(dictionary[lang]).forEach(key => {
-        const langFile = path.join(
-          dictionaryDist,
-          lang,
-          `${key}.json`,
-        )
-        fs.writeFileSync(
-          langFile,
-          JSON.stringify(dictionary[lang][key]),
-        )
+      i18nDist.forEach(dist => {
+        fs.cpSync(dictionaryDist, dist, { recursive: true })
       })
 
-      console.log(`Created ${lang} dictionary file.`)
+      console.log(`${targetLanguages.length} files created for ${domain} domain.`)
     })
-
-    i18nDist.forEach(dist => {
-      fs.cpSync(dictionaryDist, dist, { recursive: true })
+    .catch(error => {
+      console.error(`${error}`)
     })
-
-    console.log(`${targetLanguages.length} files created.`)
-  })
-  .catch(error => {
-    console.error(`${error}`)
   })

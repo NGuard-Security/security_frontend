@@ -131,12 +131,25 @@ export default function Navbar({
                 </a>
               </li>
               <li>
-                <a
-                  href={`/invite/nguard?lang=${locale}`}
-                  className="text-center text-[13px] text-white hover:font-semibold"
-                >
-                  {t("support")}
-                </a>
+                {domain === "www" ? (
+                  <Link
+                    href="/invite/nguard"
+                    className="text-center text-[13px] text-white hover:font-semibold"
+                    onClick={() => {
+                      setIsMobileNavOpen(false)
+                      setIsUserMenuOpen(false)
+                    }}
+                  >
+                    {t("support")}
+                  </Link>
+                ) : (
+                  <a
+                    href={`https://nguard.xyz/${locale}/invite/nguard`}
+                    className="text-center text-[13px] text-white hover:font-semibold"
+                  >
+                    {t("support")}
+                  </a>
+                )}
               </li>
               {/*
                 <li>
@@ -431,7 +444,7 @@ export default function Navbar({
                         {domain === "checkout" ? (
                           <Link
                             href="/mypage"
-                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            className="cursor-pointer rounded-lg p-2 text-sm hover:bg-white/[.05] active:bg-white/[.08]"
                             onClick={() => {
                               setIsMobileNavOpen(false)
                               setIsUserMenuOpen(false)
@@ -442,7 +455,7 @@ export default function Navbar({
                         ) : (
                           <a
                             href={`https://checkout-v2test.nguard.dev/${locale}/mypage`}
-                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            className="cursor-pointer rounded-lg p-2 text-sm hover:bg-white/[.05] active:bg-white/[.08]"
                           >
                             {t("payhistory")}
                           </a>
@@ -456,7 +469,7 @@ export default function Navbar({
                         {locale !== "ko" && (
                           <Link
                             href="/"
-                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            className="cursor-pointer rounded-lg p-2 text-sm hover:bg-white/[.05] active:bg-white/[.08]"
                             onClick={() => {
                               setIsMobileNavOpen(false)
                               setIsUserMenuOpen(false)
@@ -471,7 +484,7 @@ export default function Navbar({
                         {locale !== "en" && (
                           <Link
                             href="/"
-                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            className="cursor-pointer rounded-lg p-2 text-sm hover:bg-white/[.05] active:bg-white/[.08]"
                             onClick={() => {
                               setIsMobileNavOpen(false)
                               setIsUserMenuOpen(false)
@@ -486,7 +499,7 @@ export default function Navbar({
                         {locale !== "ja" && (
                           <Link
                             href="/"
-                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            className="cursor-pointer rounded-lg p-2 text-sm hover:bg-white/[.05] active:bg-white/[.08]"
                             onClick={() => {
                               setIsMobileNavOpen(false)
                               setIsUserMenuOpen(false)
@@ -501,7 +514,7 @@ export default function Navbar({
                         {locale !== "vi" && (
                           <Link
                             href="/"
-                            className="cursor-pointer rounded-lg p-2 text-sm font-semibold hover:bg-white/[.05] active:bg-white/[.08]"
+                            className="cursor-pointer rounded-lg p-2 text-sm hover:bg-white/[.05] active:bg-white/[.08]"
                             onClick={() => {
                               setIsMobileNavOpen(false)
                               setIsUserMenuOpen(false)

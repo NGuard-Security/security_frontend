@@ -18,7 +18,9 @@
     "plugin:tailwindcss/recommended"
   ],
   "rules": {
+    "no-alert": "off",
     "no-nested-ternary": "off",
+    "max-classes-per-file": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "tailwindcss/classnames-order": [

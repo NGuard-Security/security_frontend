@@ -13,4 +13,5 @@ export type InviteProps = {
       verify: boolean
     }
   }
+  accessToken: string
 }

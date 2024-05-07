@@ -6,6 +6,7 @@ import { GoogleTagManager } from "@next/third-parties/google"
 
 import Head from "next/head"
 import Script from "next/script"
+import NextNProgress from "nextjs-progressbar"
 
 import ChannelIO from "@packages/channelio/component"
 
@@ -47,6 +48,8 @@ function App({ Component, pageProps }: AppProps) {
           href="https://cdn.nguard.dev/assets/common/images/favicon.png"
         />
       </Head>
+
+      <NextNProgress height={1.58} color="#ff734c" />
 
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />

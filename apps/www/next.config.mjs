@@ -13,6 +13,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.discordapp.com",
       },
+      // For development
+      {
+        protocol: "https",
+        hostname: "nguard-cdn-v3staging.onrender.com",
+      },
     ],
   },
   reactStrictMode: true,
