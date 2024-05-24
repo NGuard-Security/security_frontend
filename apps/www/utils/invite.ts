@@ -57,7 +57,9 @@ class InviteActions {
       this.parent = parent
     }
 
-    requestAuth(provider: "GOOGLE" | "NAVER" | "KAKAO") {
+    requestAuth(
+      provider: "GOOGLE" | "NAVER" | "KAKAO",
+    ): Window | null {
       if (
         !this.parent.window ||
         !["GOOGLE", "KAKAO", "NAVER"].includes(provider)
@@ -70,6 +72,23 @@ class InviteActions {
         "NGuard OAUTH Verify",
         "width=562px, height=972px, top=30px, left=675px, resizable=no",
       )
+    }
+
+    getAuthResult(ev: MessageEvent) {
+      if (
+        !this.parent.window ||
+        ev.origin !== "http://localhost:4000" ||
+        ev.data.type !== "OAUTH_SIGNIN_COMPLETE"
+      ) {
+        return null
+      }
+
+      if (!ev.data.data) {
+        window.alert("Something went wrong. Please try again later.")
+        return null
+      }
+
+      return ev.data.data
     }
   })(this)
 

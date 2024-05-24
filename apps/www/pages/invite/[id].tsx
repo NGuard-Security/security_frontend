@@ -102,6 +102,13 @@ export default function Invite({ guild, accessToken }: InviteProps) {
   })
 
   const actions = new InviteActions()
+  const oauthResultEvent = (ev: MessageEvent) => {
+    const authResult = actions.OAUTH.getAuthResult(ev)
+    if (authResult) {
+      // TODO: Close popup window
+      actions.COMMON.goNextStep("oauth", authResult)
+    }
+  }
 
   useEffect(() => {
     actions.setWindow(window)
@@ -114,13 +121,19 @@ export default function Invite({ guild, accessToken }: InviteProps) {
       deleteCookie("access_token")
       window.location.reload()
     }
+
+    window.removeEventListener("message", oauthResultEvent)
+    window.addEventListener("message", oauthResultEvent)
   })
 
   return (
     <>
       <Head>
-        <title>Main : NGuard Security</title>
-        <meta property="og:title" content="Main : NGuard Security" />
+        <title>Join {guild.name} : NGuard Security</title>
+        <meta
+          property="og:title"
+          content={`Join ${guild.name} : NGuard Security`}
+        />
 
         <link rel="canonical" href={`https://nguard.xyz${asPath}`} />
       </Head>
