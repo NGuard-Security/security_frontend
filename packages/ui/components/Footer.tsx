@@ -59,12 +59,12 @@ export default function Footer() {
             <a href="tel:+827041552227">070-4155-2227</a>
           </p>
 
-          {/* <p className="mx-auto mt-4 max-w-xl text-center leading-relaxed text-gray-400 md:text-left">
+          <p className="mx-auto mt-4 max-w-xl text-center leading-relaxed text-gray-400 md:text-left">
             {t("company.license.mailorder")}&nbsp;
             <button type="button" onClick={() => openFtc()}>
-              제 2024-인천남동-????
+              제 2024-인천남동구-1722
             </button>
-          </p> */}
+          </p>
 
           <p className="mx-auto mt-4 max-w-xl text-center leading-relaxed text-gray-400 md:text-left">
             {t("company.address")}
