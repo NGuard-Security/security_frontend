@@ -17,7 +17,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative mx-auto mt-[10vh] max-w-screen-md px-10 py-14 text-center text-sm sm:px-6 md:px-28 md:text-left md:text-base lg:py-20 xl:max-w-screen-xl">
+    <footer className="relative mx-auto mt-[10vh] max-w-screen-md px-8 py-14 text-center text-sm md:text-left md:text-base lg:py-20 xl:max-w-screen-xl">
       <div className="absolute right-4 top-4 sm:right-6 sm:top-6 lg:right-8 lg:top-8">
         <button
           type="button"
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
       <nav
-        className="mt-10 flex flex-col items-center justify-between gap-4 text-gray-300 md:mt-4 md:items-end lg:mt-20 lg:flex-row lg:items-center"
+        className="mt-8 flex flex-col items-center justify-between gap-4 text-gray-300 md:mt-4 md:items-end lg:mt-20 lg:flex-row lg:items-center"
         aria-labelledby="footer-navigation"
       >
         <span>
