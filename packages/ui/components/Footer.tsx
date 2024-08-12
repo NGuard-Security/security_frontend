@@ -5,8 +5,8 @@ export default function Footer() {
 
   const openFtc = () => {
     const popup = window.open(
-      "http://www.ftc.go.kr/bizCommPop.do?wrkr_no=8642700702",
-      "bizCommPop",
+      "http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=3612002347",
+      "communicationViewPopup",
       "width=750, height=700;",
     )
 
@@ -17,7 +17,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative mx-auto mt-[10vh] max-w-screen-md px-10 py-14 text-center text-sm sm:px-6 md:px-28 md:text-left md:text-base lg:py-20 xl:max-w-screen-xl">
+    <footer className="relative mx-auto mt-[10vh] max-w-screen-md px-8 py-14 text-center text-sm md:text-left md:text-base lg:py-20 xl:max-w-screen-xl">
       <div className="absolute right-4 top-4 sm:right-6 sm:top-6 lg:right-8 lg:top-8">
         <button
           type="button"
@@ -52,17 +52,17 @@ export default function Footer() {
           <p className="mx-auto mt-4 max-w-xl text-center leading-relaxed text-gray-400 md:text-left">
             {t("company.license.registration")}&nbsp;
             <button type="button" onClick={() => openFtc()}>
-              864-27-00702
+              361-20-02347
             </button>
             &nbsp;|&nbsp;
             {t("company.phone")}&nbsp;
-            <a href="tel:+82050714707937">0507-1470-7937</a>
+            <a href="tel:+827041552227">070-4155-2227</a>
           </p>
 
           <p className="mx-auto mt-4 max-w-xl text-center leading-relaxed text-gray-400 md:text-left">
             {t("company.license.mailorder")}&nbsp;
             <button type="button" onClick={() => openFtc()}>
-              제 2023-화성정남-0097
+              제 2024-인천남동구-1722
             </button>
           </p>
 
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
       <nav
-        className="mt-10 flex flex-col items-center justify-between gap-4 text-gray-300 md:mt-4 md:items-end lg:mt-20 lg:flex-row lg:items-center"
+        className="mt-8 flex flex-col items-center justify-between gap-4 text-gray-300 md:mt-4 md:items-end lg:mt-20 lg:flex-row lg:items-center"
         aria-labelledby="footer-navigation"
       >
         <span>

@@ -105,7 +105,7 @@ export default function Navbar({
                 {domain === "www" ? (
                   <Link
                     href="/"
-                    className="text-center text-[13px] text-white hover:font-semibold"
+                    className="text-center text-sm text-white hover:font-semibold"
                     onClick={() => {
                       setIsMobileNavOpen(false)
                       setIsUserMenuOpen(false)
@@ -116,7 +116,7 @@ export default function Navbar({
                 ) : (
                   <a
                     href={`https://nguard.xyz/${locale}`}
-                    className="text-center text-[13px] text-white hover:font-semibold"
+                    className="text-center text-sm text-white hover:font-semibold"
                   >
                     {t("home")}
                   </a>
@@ -125,7 +125,7 @@ export default function Navbar({
               <li>
                 <a
                   href={`https://console.nguard.xyz/${locale}`}
-                  className="text-center text-[13px] text-white hover:font-semibold"
+                  className="text-center text-sm text-white hover:font-semibold"
                 >
                   {t("dashboard")}
                 </a>
@@ -134,7 +134,7 @@ export default function Navbar({
                 {domain === "www" ? (
                   <Link
                     href="/invite/nguard"
-                    className="text-center text-[13px] text-white hover:font-semibold"
+                    className="text-center text-sm text-white hover:font-semibold"
                     onClick={() => {
                       setIsMobileNavOpen(false)
                       setIsUserMenuOpen(false)
@@ -145,7 +145,7 @@ export default function Navbar({
                 ) : (
                   <a
                     href={`https://nguard.xyz/${locale}/invite/nguard`}
-                    className="text-center text-[13px] text-white hover:font-semibold"
+                    className="text-center text-sm text-white hover:font-semibold"
                   >
                     {t("support")}
                   </a>
@@ -156,7 +156,7 @@ export default function Navbar({
                   {domain === "www" ? (
                     <Link
                       href="/upgrade"
-                      className="text-center text-[13px] text-white hover:font-semibold"
+                      className="text-center text-sm text-white hover:font-semibold"
                       onClick={() => {
                         setIsMobileNavOpen(false)
                         setIsUserMenuOpen(false)
@@ -167,7 +167,7 @@ export default function Navbar({
                   ) : (
                     <a
                       href={`https://nguard.xyz/${locale}/upgrade`}
-                      className="text-center text-[13px] text-white hover:font-semibold"
+                      className="text-center text-sm text-white hover:font-semibold"
                     >
                       {t("upgrade")}
                     </a>
