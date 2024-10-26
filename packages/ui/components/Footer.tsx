@@ -3,18 +3,18 @@ import { useTranslation } from "next-i18next"
 export default function Footer() {
   const { t } = useTranslation("footer")
 
-  const openFtc = () => {
-    const popup = window.open(
-      "http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=3612002347",
-      "communicationViewPopup",
-      "width=750, height=700;",
-    )
+  // const openFtc = () => {
+  //   const popup = window.open(
+  //     "http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=3612002347",
+  //     "communicationViewPopup",
+  //     "width=750, height=700;",
+  //   )
 
-    if (!popup) {
-      // eslint-disable-next-line no-alert
-      alert("팝업 차단을 해제해 주세요.")
-    }
-  }
+  //   if (!popup) {
+  //     // eslint-disable-next-line no-alert
+  //     alert("팝업 차단을 해제해 주세요.")
+  //   }
+  // }
 
   return (
     <footer className="relative mx-auto mt-[10vh] max-w-screen-md px-10 py-14 text-center text-sm sm:px-6 md:px-28 md:text-left md:text-base lg:py-20 xl:max-w-screen-xl">
@@ -41,7 +41,7 @@ export default function Footer() {
           </svg>
         </button>
       </div>
-      <div className="md:flex md:items-end md:justify-between">
+      {/* <div className="md:flex md:items-end md:justify-between">
         <div>
           <p className="mx-auto max-w-xl text-center leading-relaxed text-gray-400 md:text-left">
             {t("company.name")}
@@ -70,7 +70,7 @@ export default function Footer() {
             {t("company.address")}
           </p>
         </div>
-      </div>
+      </div> */}
       <nav
         className="mt-10 flex flex-col items-center justify-between gap-4 text-gray-300 md:mt-4 md:items-end lg:mt-20 lg:flex-row lg:items-center"
         aria-labelledby="footer-navigation"
