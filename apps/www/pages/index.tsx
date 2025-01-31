@@ -8,43 +8,56 @@ import Head from "next/head"
 import Image from "next/image"
 
 export const getServerSideProps = (async ctx => {
-  try {
-    const koreanbots = await (
-      await fetch("https://api.nguard.xyz/www/status")
-    ).json()
+  // try {
+  //   const koreanbots = await (
+  //     await fetch("https://api.nguard.xyz/www/status")
+  //   ).json()
 
-    return {
-      props: {
-        data: {
-          servers: koreanbots.data.servers,
-          votes: koreanbots.data.votes,
-        },
-        ...(await serverSideTranslations(ctx.locale ?? "ko", [
-          "navbar",
-          "footer",
-          "main",
-        ])),
-      },
-    }
-  } catch {
-    return {
-      props: {
-        data: {},
-        ...(await serverSideTranslations(ctx.locale ?? "ko", [
-          "navbar",
-          "footer",
-          "main",
-        ])),
-      },
-    }
+  //   return {
+  //     props: {
+  //       data: {
+  //         servers: koreanbots.data.servers,
+  //         votes: koreanbots.data.votes,
+  //       },
+  //       ...(await serverSideTranslations(ctx.locale ?? "ko", [
+  //         "navbar",
+  //         "footer",
+  //         "main",
+  //       ])),
+  //     },
+  //   }
+  // } catch {
+  //   return {
+  //     props: {
+  //       data: {},
+  //       ...(await serverSideTranslations(ctx.locale ?? "ko", [
+  //         "navbar",
+  //         "footer",
+  //         "main",
+  //       ])),
+  //     },
+  //   }
+  // }
+
+  return {
+    props: {
+      data: {},
+      ...(await serverSideTranslations(ctx.locale ?? "ko", [
+        "navbar",
+        "footer",
+        "main",
+      ])),
+    },
   }
 }) satisfies GetServerSideProps
 
-export default function Home({
-  data,
-}: {
-  data: { dday: number; servers?: number; votes?: number }
-}) {
+// export default function Home({
+//   data,
+// }: {
+//   data: { servers?: number; votes?: number }
+// }) {
+
+export default function Home() {
   const { locale, asPath } = useRouter()
   const { t } = useTranslation("main")
 
@@ -113,7 +126,7 @@ export default function Home({
                 )}
               </h4>
             </div>
-            <div className="flex items-center">
+            {/*             <div className="flex items-center">
               <span className="w-52 text-lg sm:text-xl">
                 {t("section2.invited")}
               </span>
@@ -128,7 +141,7 @@ export default function Home({
               <h4 className="font-suite w-28 min-w-0 shrink-0 rounded-2xl bg-[#1b212d] py-3.5 text-center text-2xl font-black sm:w-40 sm:text-4xl">
                 {data.votes || "N/A"}
               </h4>
-            </div>
+            </div> */}
           </div>
         </section>
 
