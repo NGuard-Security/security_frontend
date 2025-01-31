@@ -8,22 +8,35 @@ import Head from "next/head"
 import Image from "next/image"
 
 export const getServerSideProps = (async ctx => {
-  const koreanbots = await (
-    await fetch("https://api.nguard.xyz/www/status")
-  ).json()
+  try {
+    const koreanbots = await (
+      await fetch("https://api.nguard.xyz/www/status")
+    ).json()
 
-  return {
-    props: {
-      data: {
-        servers: koreanbots.data.servers,
-        votes: koreanbots.data.votes,
+    return {
+      props: {
+        data: {
+          servers: koreanbots.data.servers,
+          votes: koreanbots.data.votes,
+        },
+        ...(await serverSideTranslations(ctx.locale ?? "ko", [
+          "navbar",
+          "footer",
+          "main",
+        ])),
       },
-      ...(await serverSideTranslations(ctx.locale ?? "ko", [
-        "navbar",
-        "footer",
-        "main",
-      ])),
-    },
+    }
+  } catch {
+    return {
+      props: {
+        data: {},
+        ...(await serverSideTranslations(ctx.locale ?? "ko", [
+          "navbar",
+          "footer",
+          "main",
+        ])),
+      },
+    }
   }
 }) satisfies GetServerSideProps
 
