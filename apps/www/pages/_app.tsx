@@ -29,6 +29,11 @@ function App({ Component, pageProps }: AppProps) {
           content="NGuard Security는 디스코드 보안 서비스로, 디스코드 서버 보안에 새로운 변화를 선사합니다."
         />
 
+        <meta
+          name="naver-site-verification"
+          content="a76b5cccca37c6f13e9e27e780cb087559f2a1ff"
+        />
+
         <link
           rel="preconnect"
           href="https://cdn.nguard.dev"
